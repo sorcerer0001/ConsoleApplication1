@@ -6,11 +6,15 @@ using namespace std;
 
 int main()
 {
-	int arr[5] = {0};
-	char c;
-	while (scanf("%c", &c))
+	int arr[5] = {0},k=0;
+	char c[80];
+	/*while ((c=cin.get())!=EOF)*/
+	/*while (cin>>c)*/
+	/*while ((c[k]=cin.get())!=EOF)*/
+	while((c[k] = cin.get())!= EOF)
 	{
-		switch ((int)c)
+		
+		switch ((int)c[k])
 		{
 		case 97:
 			arr[0]++;
@@ -29,14 +33,12 @@ int main()
 			break;
 		default:
 			break;
+		
 		}
+		k++;
 
 	}
-	for (int i = 0; i < 5; i++)
-	{
-		cout << arr[i] << endl;
-	}
-
+	cout << arr[0] << " " << arr[1] << " " << arr[2] << " " << arr[3] << " " << arr[4] << endl;
 
 
 

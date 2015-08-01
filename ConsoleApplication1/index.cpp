@@ -1,51 +1,28 @@
-#include<iostream>
-#include<stdlib.h>
 #include<stdio.h>
-
-using namespace std;
-
+#include<string.h>
 int main()
 {
-	int arr[5] = {0};
-	char c;
-	/*while ((c=cin.get())!=EOF)*/
-	/*while (cin>>c)*/
-	while (cin.get(c))
-	{
-		switch ((int)c)
-		{
-		case 97:
-			arr[0]++;
-			break;
-		case 101:
-			arr[1]++;
-			break;
-		case 105:
-			arr[2]++;
-			break;
-		case 111:
-			arr[3]++;
-			break;
-		case 117:
-			arr[4]++;
-			break;
-		default:
-			break;
-		}
-
-	}
-	cout << arr[0] << endl;
-	cout << arr[1] << endl;
-	cout << arr[2] << endl;
-	cout << arr[3] << endl;
-	cout << arr[4] << endl;
-
-
-
-	system("pause");
+	char c1[80], c2[80];
+	int i, l1, l2, t;
+	gets_s(c1);
+	gets_s(c2);
+	l1 = strlen(c1);
+	l2 = strlen(c2);
+	for (i = 0; i < l1; i++)
+		if (c1[i] <= 'Z')
+			c1[i] += 32;
+	for (i = 0; i < l2; i++)
+		if (c2[i] <= 'Z')
+			c2[i] += 32;
+	t = strcmp(c1, c2);
+	if (t == 0)
+		printf("=\n");
+	else if (t > 0)
+		printf(">\n");
+	else if (t < 0)
+		printf("<\n");
 	return 0;
 }
-
 /*
 namespace config{
 	int arr1[] = {20,3,5,7,9,50,22};
