@@ -1,27 +1,34 @@
 #include<stdio.h>
-#include<string.h>
+
+using namespace std;
 int main()
 {
-	char c1[80], c2[80];
-	int i, l1, l2, t;
-	gets_s(c1);
-	gets_s(c2);
-	l1 = strlen(c1);
-	l2 = strlen(c2);
-	for (i = 0; i < l1; i++)
-		if (c1[i] <= 'Z')
-			c1[i] += 32;
-	for (i = 0; i < l2; i++)
-		if (c2[i] <= 'Z')
-			c2[i] += 32;
-	t = strcmp(c1, c2);
-	if (t == 0)
-		printf("=\n");
-	else if (t > 0)
-		printf(">\n");
-	else if (t < 0)
-		printf("<\n");
-	return 0;
+	char st[500];
+	int uc = 0, dc = 0, k = 0, arr[2];
+	gets(st);
+	for (int i = 0; st[i] != '\0'; i++){
+		if ((int)st[i] != 32 && k == 0)
+		{
+			uc = i;
+			k = 1;
+		}
+		if ((int)st[i] == 32 && k == 1)
+		{
+			dc = i;
+			k = 0;
+			if (dc - uc>arr[1])
+			{
+				arr[0] = uc;
+				arr[1] = dc - uc;
+			}
+		}
+	}
+	for (int i = arr[0]; i < arr[1]; i++)
+	{
+		printf("%c",st[i]);
+	}
+
+	return  0;
 }
 /*
 namespace config{
